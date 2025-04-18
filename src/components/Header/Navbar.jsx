@@ -5,8 +5,8 @@ const Navbar = () => {
   const navItems = (
     <>
       <div className="md:flex gap-5">
-        <NavLink to="/"><li>Home</li></NavLink>
-        <NavLink to="/about"><li>About</li></NavLink>
+        <NavLink className={({isActive})=> (isActive? "text-green-400": '')} to="/"><li>Home</li></NavLink>
+        <NavLink className={({isActive})=> (isActive? "text-green-400": '')} to="/about"><li>About</li></NavLink>
       </div>
     </>
   );
