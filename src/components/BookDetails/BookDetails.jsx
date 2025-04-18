@@ -1,7 +1,15 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+import { addItems } from "../../utility/addToDB";
 
 const BookDetails = () => {
+
+    const handleRead = id=> {
+        addItems(id)
+    }
+
+
+
   const { Id } = useParams();
   const id = parseInt(Id);
   const bookData = useLoaderData();
@@ -23,7 +31,7 @@ const BookDetails = () => {
     <div className="hero">
       <div className="hero-content items-start flex-col lg:flex-row">
         <div className="bg-base-300 rounded-lg">
-          <img src={image} className="max-w-sm m-16 rounded-lg" />
+          <img src={image} className="max-w-sm m-14 rounded-lg" />
         </div>
         <div className="space-y-2">
           <h1 className="text-4xl font-bold">{bookName}</h1>
@@ -47,13 +55,25 @@ const BookDetails = () => {
             ))}
           </div>
           <div className="space-y-5 text-gray-500 font-semibold py-4">
-            <h1>Number of Pages: <span className="pl-20 text-black">{totalPages}</span></h1>
-            <p>Publisher: <span className="pl-32 text-black">{publisher}</span></p>
-            <p>Year of Publishing: <span className="pl-16 text-black"> {yearOfPublishing}</span></p>
-            <p>Rating: <span className="pl-38 text-black">{rating}</span></p>
+            <h1>
+              Number of Pages:{" "}
+              <span className="pl-20 text-black">{totalPages}</span>
+            </h1>
+            <p>
+              Publisher: <span className="pl-32 text-black">{publisher}</span>
+            </p>
+            <p>
+              Year of Publishing:{" "}
+              <span className="pl-16 text-black"> {yearOfPublishing}</span>
+            </p>
+            <p>
+              Rating: <span className="pl-38 text-black">{rating}</span>
+            </p>
           </div>
-          <button className="btn btn-primary mr-2">Get Started</button>
-          <button className="btn btn-success">Get Started</button>
+          <div>
+            <button onClick={()=> handleRead(id)} className="btn btn-outline px-5 mr-2">Read</button>
+            <button className="btn btn-info">Wishlist</button>
+          </div>
         </div>
       </div>
     </div>
