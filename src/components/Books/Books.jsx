@@ -4,7 +4,6 @@ import Book from '../Book/Book';
 
 const Books = () => {
     const booksData = useLoaderData();
-    console.log(booksData);
     return (
         <div className='text-center'>
             <h1 className='text-3xl font-bold'>Books</h1>
