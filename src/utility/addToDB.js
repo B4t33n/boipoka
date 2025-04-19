@@ -23,4 +23,4 @@ const addItems = (id)=>{
     }
 }
 
-export {addItems}
+export {addItems, getItems}

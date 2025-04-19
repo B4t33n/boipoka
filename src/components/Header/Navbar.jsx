@@ -7,6 +7,7 @@ const Navbar = () => {
       <div className="md:flex gap-5">
         <NavLink className={({isActive})=> (isActive? "text-green-400": '')} to="/"><li>Home</li></NavLink>
         <NavLink className={({isActive})=> (isActive? "text-green-400": '')} to="/about"><li>About</li></NavLink>
+        <NavLink className={({isActive})=> (isActive? "text-green-400": '')} to="/readingList"><li>Reading List</li></NavLink>
       </div>
     </>
   );

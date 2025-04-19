@@ -25,8 +25,8 @@ const BookDetails = () => {
     yearOfPublishing,
     category,
     rating,
-  } = singleBook;
-  console.log(singleBook);
+  } = singleBook || {};
+
   return (
     <div className="hero">
       <div className="hero-content items-start flex-col lg:flex-row">
@@ -72,7 +72,7 @@ const BookDetails = () => {
           </div>
           <div>
             <button onClick={()=> handleRead(id)} className="btn btn-outline px-5 mr-2">Read</button>
-            <button className="btn btn-info">Wishlist</button>
+            <button onClick={()=> handleRead(id)} className="btn btn-info">Wishlist</button>
           </div>
         </div>
       </div>
